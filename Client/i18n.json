@@ -1,0 +1,38 @@
+{
+  "version": "1.0",
+  "locale": {
+    "source": "en",
+    "targets": [
+      "hi",
+      "ta",
+      "te",
+      "kn",
+      "ml",
+      "bn",
+      "gu",
+      "pa",
+      "mr",
+      "ur",
+      "or",
+      "as",
+      "sa",
+      "mai",
+      "kok",
+      "doi",
+      "sd",
+      "mni",
+      "sat",
+      "ks",
+      "ne",
+      "bo"
+    ]
+  },
+  "buckets": {
+    "json": {
+      "include": [
+        "i18n/[locale].json"
+      ]
+    }
+  },
+  "$schema": "https://lingo.dev/schema/i18n.json"
+}

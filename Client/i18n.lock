@@ -1,0 +1,32 @@
+version: 1
+checksums:
+  4188a166aad2705b4f09401f924502ed:
+    nav_home: 104a3db3b671c04e167eafbe21e57881
+    nav_culture: 598e8cf9fdd3ed940090e97eac0674b1
+    nav_heritage: 792335ee5aea4c9257bdbcf9bb6d9a01
+    nav_explore: 69560a8d5ef8a05a483e58e427ff76ed
+    hero_title: e213adba465a2ecd9ca29504a7e9eb67
+    hero_sub: 56e357dc2d71750ee036980312834d26
+    hero_desc: fb7adb9995da240ceeaf1886460618b9
+    cta: 8a37fee5cbc43c183fbe121620fd39a2
+    card1_title: 4e0c95486af8e7aa691ce436b7e7cce7
+    card1_desc: 083ea7acefa10065f759e87866626e28
+    card2_title: 9cc4f03de97e6b0e5089a7e9d31d39e9
+    card2_desc: f34a5c65cbdd6d60edbd5012155e721d
+    card3_title: ce08b590bad41132a34d894f2e69503d
+    card3_desc: ce8e5a5164bf6c4346a336b926f23a29
+    quote: a8885cb4b3c9882c79574048dc7d7193
+    logo_sub: 089de896f38195d3144070e3bb31fd7a
+    nav_dashboard: c9380ea68c8c76ea451bd9613329a07c
+    nav_crops: b88f3b6966a745363417b7872a221607
+    nav_weather: 35c4a971dd9b78ef6762a19097ef1566
+    nav_market: 7729913d1aff573d9d207509d5f41774
+    nav_advisory: 495a830775de8f452de2cf8a33823dbd
+    soil_moisture: e4cc40712684f42f200281eb1c30934f
+    crop_health: bec4b9a373fab921657c9f6e3b9a09e2
+    market_price: bcdc3d644f0851ce53d81dfac4b6e2c3
+    optimal: dba3b9c212d341277b9cf0569d7381d9
+    excellent: 16372294108f169683263c353c4071dc
+    per_quintal: c2e43673f2549f40d54aa2b2a8f28ada
+    good_morning: eae3cc44ad199560a7d941219ebeb9c9
+    check_advisory: 71dfcc1f3247bbf6ab632a8c38c6ceaf

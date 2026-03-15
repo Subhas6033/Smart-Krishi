@@ -1,10 +1,14 @@
 import React from "react";
+import Layout from "./Layout/Layout";
+import { Outlet } from "react-router-dom";
 
 const App = () => {
   return (
-    <div className="text-center font-semibold underline italic bg-black min-h-screen flex justify-center items-center text-white tracking-widest text-5xl sm:leading-10">
-      This is the main applications.It will loks like this
-    </div>
+    <>
+      <Layout>
+        <Outlet />
+      </Layout>
+    </>
   );
 };
 
