@@ -13,6 +13,7 @@
     "@craco/craco": "^7.1.0",
     "@reduxjs/toolkit": "^2.11.2",
     "@tailwindcss/vite": "^4.2.1",
+    "axios": "^1.14.0",
     "i18next": "^25.8.18",
     "motion": "^12.38.0",
     "react": "^19.2.4",

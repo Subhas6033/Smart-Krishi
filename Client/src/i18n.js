@@ -14,6 +14,13 @@ import mr from "../../i18n/mr.json";
 import ur from "../../i18n/ur.json";
 import or_ from "../../i18n/or.json";
 
+// Strip region suffix: "hi-IN" → "hi", "en-US" → "en"
+const savedLang = (
+  localStorage.getItem("preferred_lang") ||
+  navigator.language ||
+  "en"
+).split("-")[0];
+
 i18n.use(initReactI18next).init({
   resources: {
     en: { translation: en },
@@ -29,9 +36,11 @@ i18n.use(initReactI18next).init({
     ur: { translation: ur },
     or: { translation: or_ },
   },
-  lng: localStorage.getItem("preferred_lang") || "en",
+  lng: savedLang,
   fallbackLng: "en",
   interpolation: { escapeValue: false },
+  // Prevent i18next from appending region codes internally
+  load: "languageOnly",
 });
 
 export default i18n;

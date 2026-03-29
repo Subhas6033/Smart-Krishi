@@ -119,7 +119,7 @@ export default function Market() {
   return (
     <div className="min-h-screen bg-[#0d1f0f] text-white">
       {/* Hero */}
-      <div className="relative bg-gradient-to-b from-[#1a2910] to-[#0d1f0f] px-6 py-14">
+      <div className="relative bg-linear-to-b from-[#1a2910] to-[#0d1f0f] px-6 py-14">
         <div className="absolute inset-0 opacity-5 pointer-events-none bg-[radial-gradient(#7e9e4a_1px,transparent_1px)] [background-size:28px_28px]" />
         <motion.div
           initial={{ opacity: 0, y: -16 }}

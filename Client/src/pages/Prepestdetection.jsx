@@ -101,7 +101,7 @@ export default function PrePestDetection() {
   return (
     <div className="min-h-screen bg-[#0d1f0f] text-white">
       {/* Hero */}
-      <div className="relative bg-gradient-to-b from-[#1a2a3f] to-[#0d1f0f] px-6 py-14">
+      <div className="relative bg-linear-to-b from-[#1a2a3f] to-[#0d1f0f] px-6 py-14">
         <div className="absolute inset-0 opacity-5 pointer-events-none bg-[radial-gradient(#4a6e9e_1px,transparent_1px)] [background-size:24px_24px]" />
         <motion.div
           initial={{ opacity: 0, y: -16 }}

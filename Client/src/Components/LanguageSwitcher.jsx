@@ -35,8 +35,9 @@ export default function LanguageSwitcher() {
     LANGUAGES.find((l) => l.code === i18n.language) || LANGUAGES[0];
 
   const changeLanguage = (code) => {
-    i18n.changeLanguage(code);
-    localStorage.setItem("preferred_lang", code);
+    const lang = code.split("-")[0]; // normalize "hi-IN" → "hi"
+    i18n.changeLanguage(lang);
+    localStorage.setItem("preferred_lang", lang);
     setOpen(false);
   };
 

@@ -133,7 +133,7 @@ export default function Dashboard() {
   return (
     <div className="min-h-screen bg-[#0d1f0f] text-white">
       {/* Hero */}
-      <div className="relative overflow-hidden bg-gradient-to-br from-[#1a3a1f] via-[#122a16] to-[#0d1f0f] px-6 py-20">
+      <div className="relative overflow-hidden bg-linear-to-br from-[#1a3a1f] via-[#122a16] to-[#0d1f0f] px-6 py-20">
         {/* Grid pattern */}
         <div
           className="absolute inset-0 opacity-[0.04] pointer-events-none"
@@ -226,7 +226,7 @@ export default function Dashboard() {
             >
               <Link to={feat.to} className="group block">
                 <div
-                  className={`bg-gradient-to-br ${feat.color} rounded-2xl p-6 border transition-all duration-300 group-hover:scale-[1.02] group-hover:shadow-lg group-hover:shadow-black/20`}
+                  className={`bg-linear-to-br ${feat.color} rounded-2xl p-6 border transition-all duration-300 group-hover:scale-[1.02] group-hover:shadow-lg group-hover:shadow-black/20`}
                 >
                   <div className="flex items-start justify-between mb-4">
                     <div className="w-12 h-12 rounded-xl bg-black/20 flex items-center justify-center text-2xl border border-white/5">

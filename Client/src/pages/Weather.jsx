@@ -1,7 +1,8 @@
 import { useState, useEffect } from "react";
 import { useTranslation } from "react-i18next";
 import { motion, AnimatePresence } from "framer-motion";
-import TTSButton from "../components/TTSButton";
+import TTSButton from "../Components/Ttsbutton";
+import { useWeather } from "../Hooks/useWeatherhook";
 
 const WEATHER_ICONS = {
   Clear: { icon: "☀️", label: "Sunny" },
@@ -61,80 +62,29 @@ function WindDir({ deg }) {
 
 export default function Weather() {
   const { t } = useTranslation();
-  const [city, setCity] = useState("");
   const [query, setQuery] = useState("");
-  const [weather, setWeather] = useState(null);
-  const [forecast, setForecast] = useState([]);
-  const [loading, setLoading] = useState(false);
-  const [locLoading, setLocLoading] = useState(false);
-  const [error, setError] = useState("");
-  const [advisory, setAdvisory] = useState(null);
 
-  // Auto-load last city
+  // ── Redux via hook (replaces all useState fetch logic) ──
+  const {
+    weather,
+    forecast,
+    advisory,
+    loading,
+    locLoading,
+    error,
+    fetchWeather,
+    geoLocate,
+  } = useWeather();
+
+  // Auto-load: last saved city OR detect current location
   useEffect(() => {
     const last = localStorage.getItem("sk_weather_city");
     if (last) {
-      setCity(last);
       fetchWeather(last);
+    } else {
+      geoLocate();
     }
   }, []);
-
-  const fetchWeather = async (cityName) => {
-    if (!cityName?.trim()) return;
-    setLoading(true);
-    setError("");
-    try {
-      const [wRes, aRes] = await Promise.all([
-        fetch(`/api/weather/current?city=${encodeURIComponent(cityName)}`),
-        fetch(`/api/weather/advisory?city=${encodeURIComponent(cityName)}`),
-      ]);
-      if (!wRes.ok) {
-        const d = await wRes.json();
-        throw new Error(d.error || "City not found");
-      }
-      const [wData, aData] = await Promise.all([wRes.json(), aRes.json()]);
-      setWeather(wData);
-      setForecast(wData.forecast || []);
-      setAdvisory(aData);
-      localStorage.setItem("sk_weather_city", cityName);
-    } catch (err) {
-      setError(err.message);
-      setWeather(null);
-    } finally {
-      setLoading(false);
-    }
-  };
-
-  const geoLocate = () => {
-    setLocLoading(true);
-    navigator.geolocation.getCurrentPosition(
-      async ({ coords }) => {
-        try {
-          const res = await fetch(
-            `/api/weather/by-coords?lat=${coords.latitude}&lon=${coords.longitude}`
-          );
-          const data = await res.json();
-          if (!res.ok) throw new Error(data.error);
-          setCity(data.city);
-          setWeather(data);
-          setForecast(data.forecast || []);
-          const aRes = await fetch(
-            `/api/weather/advisory?city=${encodeURIComponent(data.city)}`
-          );
-          setAdvisory(await aRes.json());
-          localStorage.setItem("sk_weather_city", data.city);
-        } catch (err) {
-          setError(err.message);
-        } finally {
-          setLocLoading(false);
-        }
-      },
-      () => {
-        setError("Location access denied.");
-        setLocLoading(false);
-      }
-    );
-  };
 
   const wicon = weather
     ? WEATHER_ICONS[weather.main] || { icon: "🌡️", label: weather.main }
@@ -183,10 +133,7 @@ export default function Weather() {
               value={query}
               onChange={(e) => setQuery(e.target.value)}
               onKeyDown={(e) => {
-                if (e.key === "Enter") {
-                  setCity(query);
-                  fetchWeather(query);
-                }
+                if (e.key === "Enter") fetchWeather(query);
               }}
               placeholder={t(
                 "wx_search_ph",
@@ -195,10 +142,7 @@ export default function Weather() {
               className="flex-1 bg-[#0d1f0f] border border-[#1e4428] text-white rounded-xl px-4 py-2.5 text-sm placeholder:text-[#3d5e40] focus:outline-none focus:border-sky-600"
             />
             <button
-              onClick={() => {
-                setCity(query);
-                fetchWeather(query);
-              }}
+              onClick={() => fetchWeather(query)}
               disabled={loading}
               className="px-5 py-2.5 bg-sky-700 hover:bg-sky-600 disabled:opacity-40 text-white rounded-xl text-sm font-medium transition"
             >
@@ -221,7 +165,6 @@ export default function Weather() {
                 key={c}
                 onClick={() => {
                   setQuery(c);
-                  setCity(c);
                   fetchWeather(c);
                 }}
                 className="text-xs px-2.5 py-1 rounded-lg bg-[#0d1f0f] border border-[#1e4428]/60 text-[#7ec98a] hover:border-sky-700/50 hover:text-sky-300 transition"

@@ -3,9 +3,9 @@ dotenv.config();
 import { createServer } from "http";
 import { Server } from "socket.io";
 import { app } from "./app.js";
-import { connectDB } from "./Config/db.config.js";
 const PORT = process.env.PORT || 3000;
 import { registerTTSSocket } from "./Controllers/ Tts.socket.js";
+import { registerChatSocket } from "./Controllers/Chatbot.controller.js";
 
 const httpServer = createServer(app);
 const io = new Server(httpServer, {
@@ -17,17 +17,12 @@ const io = new Server(httpServer, {
 });
 
 registerTTSSocket(io);
+registerChatSocket(io);
 
-connectDB()
-  .then(() => {
-    app.get("/", (req, res) => {
-      res.send("Welcome to our Server");
-    });
+app.get("/", (req, res) => {
+  res.send("Welcome to our Server");
+});
 
-    httpServer.listen(PORT, () => {
-      console.log(`Server is running on the PORT : ${PORT}`);
-    });
-  })
-  .catch((err) => {
-    console.log(`Err While Starting the Server ${err}`);
-  });
+httpServer.listen(PORT, () => {
+  console.log(`Server is running on the PORT : ${PORT}`);
+});

@@ -4,6 +4,8 @@ import soilScannerReducer from "../Features/Soilscannerslice";
 import pestReducer from "../Features/Pestslice";
 import prePestReducer from "../Features/Prepestslice";
 import marketReducer from "../Features/Marketslice";
+import WeatherReducer from "../Features/WeatherSlice";
+import kisanChatReducer from "../Features/ChatbotSlice";
 
 export const store = configureStore({
   reducer: {
@@ -12,6 +14,8 @@ export const store = configureStore({
     pest: pestReducer,
     prePest: prePestReducer,
     market: marketReducer,
+    weather: WeatherReducer,
+    kisanChat: kisanChatReducer,
   },
   middleware: (getDefaultMiddleware) =>
     getDefaultMiddleware({

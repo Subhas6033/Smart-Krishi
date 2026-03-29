@@ -89,7 +89,9 @@ export default function PestDetection() {
     socket.off("tts:error");
 
     socket.on("tts:chunk", (chunk) => {
-      chunksRef.current.push(chunk instanceof ArrayBuffer ? chunk : (chunk.buffer ?? chunk));
+      chunksRef.current.push(
+        chunk instanceof ArrayBuffer ? chunk : (chunk.buffer ?? chunk)
+      );
     });
 
     socket.on("tts:done", () => {
@@ -107,7 +109,9 @@ export default function PestDetection() {
           setAudioProgress(0);
         };
         audioRef.current.ontimeupdate = () => {
-          const pct = (audioRef.current.currentTime / (audioRef.current.duration || 1)) * 100;
+          const pct =
+            (audioRef.current.currentTime / (audioRef.current.duration || 1)) *
+            100;
           setAudioProgress(pct || 0);
           setTtsState("playing");
         };
@@ -163,7 +167,7 @@ export default function PestDetection() {
       <audio ref={audioRef} className="hidden" />
 
       {/* Hero */}
-      <div className="relative bg-gradient-to-b from-[#3a1a1a] to-[#0d1f0f] px-6 py-14">
+      <div className="relative bg-linear-to-b from-[#3a1a1a] to-[#0d1f0f] px-6 py-14">
         <div className="absolute inset-0 opacity-5 pointer-events-none bg-[radial-gradient(#9e4a4a_1px,transparent_1px)] [background-size:24px_24px]" />
         <motion.div
           initial={{ opacity: 0, y: -16 }}
@@ -226,7 +230,7 @@ export default function PestDetection() {
                   alt="Crop"
                   className="w-full max-h-80 object-cover"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-[#0d1f0f] via-transparent to-transparent" />
+                <div className="absolute inset-0 bg-linear-to-t from-[#0d1f0f] via-transparent to-transparent" />
                 {/* Change / Remove buttons */}
                 <div className="absolute bottom-4 left-4 right-4 flex gap-2 justify-end">
                   <button

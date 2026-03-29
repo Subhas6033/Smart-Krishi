@@ -106,7 +106,7 @@ export default function SoilScanner() {
   return (
     <div className="min-h-screen bg-[#0d1f0f] text-white">
       {/* Hero */}
-      <div className="relative bg-gradient-to-b from-[#1a3a1f] to-[#0d1f0f] px-6 py-14">
+      <div className="relative bg-linear-to-b from-[#1a3a1f] to-[#0d1f0f] px-6 py-14">
         <div className="absolute inset-0 opacity-5 pointer-events-none bg-[radial-gradient(#4a9e54_1px,transparent_1px)] [background-size:24px_24px]" />
         <motion.div
           initial={{ opacity: 0, y: -16 }}
@@ -168,7 +168,7 @@ export default function SoilScanner() {
                   alt="Soil"
                   className="w-full max-h-72 object-cover"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-[#0d1f0f] via-transparent to-transparent" />
+                <div className="absolute inset-0 bg-linear-to-t from-[#0d1f0f] via-transparent to-transparent" />
                 <div className="absolute bottom-4 left-4 right-4 flex items-center justify-between">
                   <span className="text-sm text-emerald-300 bg-[#0d1f0f]/80 px-3 py-1.5 rounded-lg">
                     ✓ {image?.name}

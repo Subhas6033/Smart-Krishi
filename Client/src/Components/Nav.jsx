@@ -42,7 +42,6 @@ const NAV_LINKS = [
     icon: "🔍",
   },
   { to: "/weather", labelKey: "nav_weather", label: "Weather", icon: "🌤️" },
-  { to: "/market", labelKey: "nav_market", label: "Market", icon: "📈" },
 ];
 
 export default function Navbar() {
@@ -63,9 +62,10 @@ export default function Navbar() {
   );
 
   const pick = (code) => {
-    setTTSLines([], ""); // stop / clear TTS on lang switch
-    i18n.changeLanguage(code);
-    localStorage.setItem("preferred_lang", code);
+    const lang = code.split("-")[0]; // normalize "hi-IN" → "hi"
+    setTTSLines([], "");
+    i18n.changeLanguage(lang);
+    localStorage.setItem("preferred_lang", lang);
     setLangOpen(false);
     setSearch("");
   };
