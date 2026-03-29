@@ -1,17 +1,3 @@
-/**
- * TTSContext.jsx
- *
- * Global context that lets any page register the text it wants spoken.
- * The floating TTSFab reads from this context.
- *
- * Usage in any page:
- *   const { setTTSLines } = useTTSContext();
- *   useEffect(() => {
- *     setTTSLines([t("page_title"), t("page_body")], t("nav_label"));
- *     return () => setTTSLines([], "");
- *   }, [i18n.language]);
- */
-
 import { createContext, useContext, useState, useCallback } from "react";
 
 const TTSContext = createContext(null);

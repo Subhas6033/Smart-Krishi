@@ -183,7 +183,7 @@ export default function Dashboard() {
 
       {/* Stats bar */}
       <div className="bg-[#0f2411] border-y border-[#2d5c34]/40">
-        <div className="max-w-4xl mx-auto px-4 py-5 grid grid-cols-4 divide-x divide-[#2d5c34]/30">
+        <div className="max-w-7xl mx-auto px-4 py-5 grid grid-cols-4 divide-x divide-[#2d5c34]/30">
           {stats.map((stat, i) => (
             <motion.div
               key={stat.label}
@@ -205,7 +205,7 @@ export default function Dashboard() {
       </div>
 
       {/* Feature Cards */}
-      <div className="max-w-4xl mx-auto px-4 py-12">
+      <div className="max-w-7xl mx-auto px-4 py-12">
         <motion.h2
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
@@ -277,7 +277,7 @@ export default function Dashboard() {
           transition={{ delay: 0.7 }}
           className="mt-8 bg-[#122a16] rounded-2xl p-5 border border-[#2d5c34]/50 flex items-center gap-4"
         >
-          <div className="text-3xl flex-shrink-0">🔊</div>
+          <div className="text-3xl shrink-0">🔊</div>
           <div>
             <h3 className="font-semibold text-white text-sm mb-0.5">
               {t("tts_feature_title", "Voice Support in Your Language")}

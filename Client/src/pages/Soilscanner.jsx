@@ -107,7 +107,7 @@ export default function SoilScanner() {
     <div className="min-h-screen bg-[#0d1f0f] text-white">
       {/* Hero */}
       <div className="relative bg-linear-to-b from-[#1a3a1f] to-[#0d1f0f] px-6 py-14">
-        <div className="absolute inset-0 opacity-5 pointer-events-none bg-[radial-gradient(#4a9e54_1px,transparent_1px)] [background-size:24px_24px]" />
+        <div className="absolute inset-0 opacity-5 pointer-events-none bg-[radial-gradient(#4a9e54_1px,transparent_1px)] bg-size-[24px_24px]" />
         <motion.div
           initial={{ opacity: 0, y: -16 }}
           animate={{ opacity: 1, y: 0 }}
@@ -130,7 +130,7 @@ export default function SoilScanner() {
         </motion.div>
       </div>
 
-      <div className="max-w-4xl mx-auto px-4 pb-20 -mt-4 space-y-6">
+      <div className="max-w-7xl mx-auto px-4 pb-20 -mt-4 space-y-6">
         {/* Upload Zone */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}

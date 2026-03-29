@@ -120,7 +120,7 @@ export default function Market() {
     <div className="min-h-screen bg-[#0d1f0f] text-white">
       {/* Hero */}
       <div className="relative bg-linear-to-b from-[#1a2910] to-[#0d1f0f] px-6 py-14">
-        <div className="absolute inset-0 opacity-5 pointer-events-none bg-[radial-gradient(#7e9e4a_1px,transparent_1px)] [background-size:28px_28px]" />
+        <div className="absolute inset-0 opacity-5 pointer-events-none bg-[radial-gradient(#7e9e4a_1px,transparent_1px)] bg-size-[28px_28px]" />
         <motion.div
           initial={{ opacity: 0, y: -16 }}
           animate={{ opacity: 1, y: 0 }}
@@ -154,7 +154,7 @@ export default function Market() {
             <button
               key={g.id}
               onClick={() => setActiveGroup(g.id)}
-              className={`flex items-center gap-2 px-4 py-2.5 rounded-xl text-sm font-medium whitespace-nowrap border transition-all flex-shrink-0 ${
+              className={`flex items-center gap-2 px-4 py-2.5 rounded-xl text-sm font-medium whitespace-nowrap border transition-all shrink-0 ${
                 activeGroup === g.id
                   ? "bg-lime-700/40 border-lime-600/60 text-lime-300"
                   : "bg-[#122a16] border-[#2d5c34]/40 text-[#7ec98a] hover:border-lime-700/40"
@@ -170,7 +170,7 @@ export default function Market() {
           <select
             value={selectedState}
             onChange={(e) => setSelectedState(e.target.value)}
-            className="bg-[#122a16] border border-[#2d5c34]/60 text-[#7ec98a] rounded-xl px-4 py-2.5 text-sm focus:outline-none focus:border-lime-600 min-w-[180px]"
+            className="bg-[#122a16] border border-[#2d5c34]/60 text-[#7ec98a] rounded-xl px-4 py-2.5 text-sm focus:outline-none focus:border-lime-600 min-w-45"
           >
             {STATES.map((s) => (
               <option key={s} value={s}>
@@ -183,7 +183,7 @@ export default function Market() {
             value={search}
             onChange={(e) => setSearch(e.target.value)}
             placeholder={t("mkt_search_crop", "Search crop...")}
-            className="flex-1 min-w-[160px] bg-[#122a16] border border-[#2d5c34]/60 text-white rounded-xl px-4 py-2.5 text-sm placeholder:text-[#3d5e40] focus:outline-none focus:border-lime-600"
+            className="flex-1 min-w-40 bg-[#122a16] border border-[#2d5c34]/60 text-white rounded-xl px-4 py-2.5 text-sm placeholder:text-[#3d5e40] focus:outline-none focus:border-lime-600"
           />
 
           <div className="flex gap-1 bg-[#122a16] border border-[#2d5c34]/40 rounded-xl p-1">

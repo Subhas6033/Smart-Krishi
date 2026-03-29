@@ -97,8 +97,8 @@ export default function Weather() {
   return (
     <div className="min-h-screen bg-[#0d1f0f] text-white">
       {/* Hero */}
-      <div className="relative bg-gradient-to-b from-[#0d1e2e] to-[#0d1f0f] px-6 py-14">
-        <div className="absolute inset-0 opacity-5 pointer-events-none bg-[radial-gradient(#4a7e9e_1px,transparent_1px)] [background-size:28px_28px]" />
+      <div className="relative bg-linear-to-b from-[#0d1e2e] to-[#0d1f0f] px-6 py-14">
+        <div className="absolute inset-0 opacity-5 pointer-events-none bg-[radial-gradient(#4a7e9e_1px,transparent_1px)] bg-size-[24px_24px]" />
         <motion.div
           initial={{ opacity: 0, y: -16 }}
           animate={{ opacity: 1, y: 0 }}
@@ -121,7 +121,7 @@ export default function Weather() {
         </motion.div>
       </div>
 
-      <div className="max-w-4xl mx-auto px-4 pb-20 -mt-4 space-y-5">
+      <div className="max-w-7xl mx-auto px-4 pb-20 -mt-4 space-y-5">
         {/* Search */}
         <motion.div
           initial={{ opacity: 0, y: 16 }}
@@ -191,7 +191,7 @@ export default function Weather() {
               className="space-y-4"
             >
               {/* Current conditions hero card */}
-              <div className="bg-gradient-to-br from-[#0e2236] to-[#0d1f0f] rounded-2xl p-6 border border-sky-900/40 relative overflow-hidden">
+              <div className="bg-linear-to-br from-[#0e2236] to-[#0d1f0f] rounded-2xl p-6 border border-sky-900/40 relative overflow-hidden">
                 <div className="absolute top-4 right-4">
                   <TTSButton text={ttsText} />
                 </div>
@@ -386,7 +386,7 @@ export default function Weather() {
                           key={i}
                           className="flex items-start gap-2.5 text-sm text-[#b8d4bb]"
                         >
-                          <span className="text-emerald-500 flex-shrink-0 mt-0.5">
+                          <span className="text-emerald-500 shrink-0 mt-0.5">
                             •
                           </span>
                           {tip}

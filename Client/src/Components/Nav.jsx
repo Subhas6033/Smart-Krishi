@@ -93,7 +93,7 @@ export default function Navbar() {
         className="flex items-center justify-between px-4"
       >
         {/* ── Logo ── */}
-        <Link to="/" className="flex items-center gap-2.5 flex-shrink-0">
+        <Link to="/" className="flex items-center gap-2.5 shrink-0">
           <div
             style={{
               width: 34,
@@ -155,7 +155,7 @@ export default function Navbar() {
         </div>
 
         {/* ── Right controls ── */}
-        <div className="flex items-center gap-2 flex-shrink-0">
+        <div className="flex items-center gap-2 shrink-0">
           {/* Language switcher */}
           <div ref={langRef} style={{ position: "relative" }}>
             <button

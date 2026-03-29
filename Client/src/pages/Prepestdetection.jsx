@@ -102,7 +102,7 @@ export default function PrePestDetection() {
     <div className="min-h-screen bg-[#0d1f0f] text-white">
       {/* Hero */}
       <div className="relative bg-linear-to-b from-[#1a2a3f] to-[#0d1f0f] px-6 py-14">
-        <div className="absolute inset-0 opacity-5 pointer-events-none bg-[radial-gradient(#4a6e9e_1px,transparent_1px)] [background-size:24px_24px]" />
+        <div className="absolute inset-0 opacity-5 pointer-events-none bg-[radial-gradient(#4a6e9e_1px,transparent_1px)] bg-size-[24px_24px]" />
         <motion.div
           initial={{ opacity: 0, y: -16 }}
           animate={{ opacity: 1, y: 0 }}
@@ -125,7 +125,7 @@ export default function PrePestDetection() {
         </motion.div>
       </div>
 
-      <div className="max-w-4xl mx-auto px-4 pb-20 -mt-4">
+      <div className="max-w-7xl mx-auto px-4 pb-20 -mt-4">
         <motion.form
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
@@ -433,7 +433,7 @@ export default function PrePestDetection() {
                         key={i}
                         className="flex items-start gap-3 text-sm text-[#b8d4bb]"
                       >
-                        <span className="flex-shrink-0 w-6 h-6 bg-blue-900/50 text-blue-300 rounded-full flex items-center justify-center text-xs font-bold border border-blue-800/40">
+                        <span className="shrink-0 w-6 h-6 bg-blue-900/50 text-blue-300 rounded-full flex items-center justify-center text-xs font-bold border border-blue-800/40">
                           {i + 1}
                         </span>
                         {action}

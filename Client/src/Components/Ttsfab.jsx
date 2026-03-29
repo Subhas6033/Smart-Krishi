@@ -1,19 +1,3 @@
-/**
- * TTSFab.jsx  —  Floating TTS Action Button
- *
- * Sits fixed at bottom-right of every page.
- * Reads whatever lines the current page registered via useTTSContext().
- * Automatically uses i18n.language → correct Sarvam voice.
- *
- * Place once in your layout, e.g. inside App.jsx alongside <Navbar />:
- *
- *   <TTSProvider>
- *     <Navbar />
- *     <Outlet />   (or your page components)
- *     <TTSFab />
- *   </TTSProvider>
- */
-
 import { useState, useRef, useEffect } from "react";
 import { useTranslation } from "react-i18next";
 import { useTTSContext } from "./Ttscontext";

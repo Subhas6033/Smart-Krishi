@@ -168,7 +168,7 @@ export default function PestDetection() {
 
       {/* Hero */}
       <div className="relative bg-linear-to-b from-[#3a1a1a] to-[#0d1f0f] px-6 py-14">
-        <div className="absolute inset-0 opacity-5 pointer-events-none bg-[radial-gradient(#9e4a4a_1px,transparent_1px)] [background-size:24px_24px]" />
+        <div className="absolute inset-0 opacity-5 pointer-events-none bg-[radial-gradient(#9e4a4a_1px,transparent_1px)] bg-size-[24px_24px]" />
         <motion.div
           initial={{ opacity: 0, y: -16 }}
           animate={{ opacity: 1, y: 0 }}
@@ -191,7 +191,7 @@ export default function PestDetection() {
         </motion.div>
       </div>
 
-      <div className="max-w-4xl mx-auto px-4 pb-20 -mt-4 space-y-6">
+      <div className="max-w-7xl mx-auto px-4 pb-20 -mt-4 space-y-6">
         {/* Upload */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -354,7 +354,7 @@ export default function PestDetection() {
                   </div>
 
                   {/* TTS Button */}
-                  <div className="flex-shrink-0">
+                  <div className="shrink-0">
                     {ttsState === "idle" || ttsState === "done" ? (
                       <button
                         onClick={playTTS}

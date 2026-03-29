@@ -1,17 +1,3 @@
-/**
- * ChaBot.jsx  (your file is pages/ChaBot.jsx)
- *
- * FIXES:
- *  - Removed the internal <header> — App.jsx already renders <Navbar />.
- *    The duplicate header was pushing content down and overlapping, which
- *    also caused kisan-root to overflow and suppress the socket setup.
- *  - kisan-root now uses height:100% instead of min-height:100vh so it
- *    fits inside the flex container App.jsx provides.
- *  - dismissError replaces the undefined chat.clearError?.() call.
- *  - Sidebar toggle button no longer reads window.innerWidth on render
- *    (not SSR-safe and caused hydration mismatches).
- */
-
 import { useState, useRef, useEffect } from "react";
 import useKisanChat from "../Hooks/useChatBotHook";
 
